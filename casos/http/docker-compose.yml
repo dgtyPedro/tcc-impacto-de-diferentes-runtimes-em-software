@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  runtimes:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tcc-http
+    working_dir: /casos/http
+    volumes:
+      - .:/casos/http
+    tty: true
+    stdin_open: true
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M

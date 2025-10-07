@@ -3,6 +3,17 @@
 #include <stdlib.h>
 #include <string.h>
 #include "quickjs.h"
+#define _POSIX_C_SOURCE 200809L
+#define _XOPEN_SOURCE   700
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <time.h>
+#include <unistd.h>
+#include <signal.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <pthread.h>
 
 static uint64_t fib_recursive(uint32_t n) {
     if (n <= 1) return n;
